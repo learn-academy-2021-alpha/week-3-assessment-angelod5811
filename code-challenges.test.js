@@ -24,13 +24,30 @@
 // Example input: 10
 // Expected output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
 
-
+//use .length
 
 
 
 // b) Create the function that makes the test pass.
+describe("when a number greater than 2 is called", () => {
+  it("returns an array of the length containing the Fibonacci sequence", () => {
+    //arrange
+    const myArray = function (a)
+    {
+      if (a===1)
+      {
+        return [0,1];
+      } else {
+        var b = myArray(a-1);
+        b.push(b[b.length - 1] + b[b.length - 2]);
+        return b;
+      }
+    }
+expect(myArray).toEqual([])
 
-
+  })
+})
+console.log(myArray(5));
 
 
 
@@ -44,11 +61,27 @@ var fullArr1 = [4, 9, 0, "7", 8, true, "hey", 7, 199, -9, false, "hola"]
 var fullArr2 = ["hello", 7, 23, -823, false, 78, null, "67", 6, "number"]
 // Expected output: [-823, 7, 23]
 
-
+//use a .push
 
 
 // b) Create the function that makes the test pass.
-
+describe("when an array of strings and numbers is called", ()=> {
+  it("returns an array of only odd numbers sorted from least to greatest", ()=> {
+    const sortArray(array){
+      let oddNums = [];
+      for(let i = 0; i < array.length; i++) {
+        if(array[i] % 2 !== 0) {
+          oddNums.push(array[i]);
+        }
+      }
+      oddNums = oddNums.sort((a,b)=> a - b);
+      array.concat(oddNums);
+      array = array.sort((a,b)=> a - b);
+      return array;
+    }
+    expect("oddNums in order from least to greatest")
+  })
+})
 
 
 
@@ -63,12 +96,21 @@ var middleLetters1 = "alpha"
 var middleLetters2 = "rhinoceros"
 // Expected output: “oc”
 
-
+//use .split and .indexOf
 
 
 
 // b) Create the function that makes the test pass.
-
+describe("when a string of letters is called", () => {
+  it("returns the middle leter if the word has an odd amount of numbers and two middle letters if even", () => {
+    const str = (array)
+    const middleLetters1 = (array) => {
+      str.split(array) = array.indexOf(5)
+      return array
+    }
+expect("returns middle letter if odd and both middle letters if even")
+  })
+})
 
 
 
@@ -86,8 +128,17 @@ var numbersToAdd2 = [0, 7, -8, 12]
 var numbersToAdd3 = []
 // Expected output: []
 
-
+//use .reduce
 
 
 
 // b) Create the function that makes the test pass.
+describe("when an array of numbers is called", () => {
+  it("returns an array of the accumulating sum", () => {
+    const reducer = (acumulator, currentValue) => {
+      acumulator + currentValue
+    }
+    expect("array returned with accumlating sums")
+  })
+})
+console.log(numbersToAdd1.reduce(reducer));
